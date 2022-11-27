@@ -1,0 +1,128 @@
+<section>
+    <h1>Experiencia</h1>
+    <div class="container-fluid">
+        <div *ngFor="let item of experienciaList" class="row">
+            <div class="col-2">
+                <img [src]="item.img" class="img-fluid" alt="logoUnsam" width=60%>
+            </div>
+            <div class="col-8">
+                <h2>{{item.empresa}}</h2>
+                <p id="tituloUno" class="nombre">{{item.puesto}}</p>
+                <p id="tituloUno" class="nombre">{{item.tareas}}</p>
+                <p id="tituloUno" class="nombre">{{item.tipo}}</p>
+                <p id="tiempo" class="nombre">{{item.start}} - {{item.end}}</p>
+            </div>
+            <div class="col">
+                <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarExperiencia" (click)="mostrarDatos(item)">Editar</button>
+                <button *ngIf="usuarioAutenticado" class="myButton" (click)="eliminarExperiencia(item)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- Modal -->
+ <div class="modal fade" id="editarExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Experiencia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="form">
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Empresa</label>
+              <input type="text" class="form-control" id="empresa" formControlName="empresa">
+              <div *ngIf="empresa?.invalid && empresa?.touched">
+
+                <div *ngIf="empresa?.errors?.['required']" class="text-danger">
+                  La empresa es requerida
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="puesto" class="form-label">Puesto</label>
+              <input type="text" class="form-control" id="puesto" formControlName="puesto">
+            </div>
+            <div class="mb-3">
+                <label for="tareas" class="form-label">Tareas Realizadas</label>
+                <input type="text" class="form-control" id="tareas" formControlName="tareas">
+              </div>
+              <div class="mb-3">
+                <label for="tipo" class="form-label">Carga Horaria</label>
+                <input type="text" class="form-control" id="tipo" formControlName="tipo">
+              </div>
+            <div class="mb-3">
+              <label for="start" class="form-label">Comienzo</label>
+              <input type="text" class="form-control" id="start" formControlName="start">
+            </div>
+            <div class="mb-3">
+              <label for="end" class="form-label">Finalizacion</label>
+              <input type="text" class="form-control" id="end" formControlName="end">
+            </div>
+            <div class="mb-3">
+              <label for="img" class="form-label">Url de la imagen</label>
+              <input type="text" class="form-control" id="img" formControlName="img">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cerrarModalExperiencia" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="guardarDatos()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center">
+  <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#agregarExperiencia">Agregar</button><br>
+</div> 
+<!-- Modal -->
+    <div class="modal fade" id="agregarExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nueva Experiencia</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="form">
+              <div class="mb-3">
+                <label for="empresa" class="form-label">Empresa</label>
+                <input type="text" class="form-control" id="empresa" formControlName="empresa">
+              </div>
+              <div class="mb-3">
+                <label for="puesto" class="form-label">Puesto</label>
+                <input type="text" class="form-control" id="puesto" formControlName="puesto">
+              </div>
+              <div class="mb-3">
+                <label for="tareas" class="form-label">Tareas</label>
+                <input type="text" class="form-control" id="tareas" formControlName="tareas">
+              </div>
+              <div class="mb-3">
+                <label for="tipo" class="form-label">Tipo</label>
+                <input type="text" class="form-control" id="tipo" formControlName="tipo">
+              </div>
+              <div class="mb-3">
+                <label for="start" class="form-label">Comienzo</label>
+                <input type="text" class="form-control" id="start" formControlName="start">
+              </div>
+              <div class="mb-3">
+                <label for="end" class="form-label">Finalizacion</label>
+                <input type="text" class="form-control" id="end" formControlName="end">
+              </div>
+              <div class="mb-3">
+                <label for="img" class="form-label">Url de la imagen</label>
+                <input type="text" class="form-control" id="img" formControlName="img">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="cerrarModalExperienciaNew" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" (click)="agregarExperiencia()">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+          
+</section>
+

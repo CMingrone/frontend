@@ -1,0 +1,73 @@
+    <div class="container-fluid">
+        <div class="modulo">
+        <div class="row">
+            <div class="col-4">
+                <img src="assets/imagenes/ARG.png" alt="logo" style="width:60%" >
+            </div>
+            <div class="col-4">
+                
+            </div>
+            <div class="col-1 align-self-center">
+              <a href="https://www.linkedin.com/in/carlosmingrone">
+                   <img style="max-width:40px; margin-top: 10px" src="assets/imagenes/in.png"></a></div>         
+            <div class="col-1 align-self-center">
+               <a href="https://www.facebook.com/carlos.mingrone.376">
+                    <img style="max-width:40px; margin-top: 10px" src="assets/imagenes/face.png"></a></div>
+            <div class="col-1 align-self-center">
+               <a href="https://instagram.com/carlos.mingrone89">
+                    <img style="max-width:40px; margin-top: 10px" src="assets/imagenes/Instagram.png"></a>
+            </div>
+
+            <div class="col-1 align-self-center">
+              
+                <button *ngIf="!usuarioAutenticado" type="button" class="myButton btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalLogin">LogIn</button>
+                <button *ngIf="usuarioAutenticado" type="button" class="myButton btn btn-primary" (click)="loginOut()">LogOut</button>
+                      <!-- Modal -->
+  <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <form [formGroup]="form">
+
+            <div class="mb-3">
+              <label for="usuario" class="form-label">Usuario</label>
+              <input type="text" class="form-control" id="usuario" formControlName="usuario" placeholder="Ingrese su usuario aqui...">
+              <div *ngIf="usuario?.invalid && usuario?.touched">
+                <div *ngIf="usuario?.errors?.['required']" class="text-danger">
+                  El usuario es requerido
+                </div>
+                <div *ngIf="usuario?.errors?.['minlength']" class="text-danger">
+                  El usuario debe tener un minimo de 4 caracteres.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="contrasenia" class="form-label">Password</label>
+              <input type="password" class="form-control" id="contrasenia" formControlName="contrasenia" placeholder="Ingrese su password aqui...">
+              <div *ngIf="usuario?.invalid && usuario?.touched">
+                <div *ngIf="usuario?.errors?.['required']" class="text-danger">
+              
+                 El password es requerido
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cerrarModalLogin" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="validarLogin()">Entrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+                
+
+
+
+        </div>

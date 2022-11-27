@@ -1,0 +1,56 @@
+<section>
+    <h1>Acerca de</h1>
+    <div class="row">
+        <div class="col-12">
+            <p id="acercaDe" class = text-center>{{acercaDe.comentario}}<br></p>
+        </div>
+        <div class="col">
+          <div style="text-align:center">
+            <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarAcercaDe" (click)="mostrarDatosActuales()">Editar</button>
+              </div>  
+               <!-- Modal -->
+                 <div class="modal fade" id="editarAcercaDe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modificar "AcercaDe"</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+
+
+                            <form [formGroup]="form">
+                                <div class="mb-3">
+                                  <label for="fullName" class="form-label">Ingrese el nuevo texto</label>
+                                  <input type="text" class="form-control" id="comentario" formControlName="comentario">
+                                  <div *ngIf="comentario?.invalid && comentario?.touched">
+                    
+                                    <div *ngIf="comentario?.errors?.['required']" class="text-danger">
+                                      El comentario es requerido
+                                    </div>
+                                    <div *ngIf="comentario?.errors?.['minlength']" class="text-danger">
+                                      Debe tener un minimo de 30 caracteres.
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                              </form>
+
+
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" id="cerrarModalAcercaDe" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" (click)="guardarDatos()">Guardar</button>
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </div>
+    </div>    
+
+
+    
+</section>

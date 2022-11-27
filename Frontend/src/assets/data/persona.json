@@ -1,0 +1,13 @@
+{
+    "persona":
+        {   "idPersona": 1,
+            "fullName" : "Carlos A. Mingrone",
+            "dateOfBirth" : "19/06/1989",
+            "position": "Desarrollador Web",
+            "mail" : "carlos_mingrone@hotmail.com",
+            "ubication" : "Buenos Aires, Argentina.",
+            "image" : "assets/imagenes/foto.jpg",
+            "sobreMi" : "Busco trabajar en una empresa en la que pueda consolidar mis conocimientos, y crecer profecionalmente desarrollando mis tareas con maxima dedicacion y empeño."
+        }
+
+}

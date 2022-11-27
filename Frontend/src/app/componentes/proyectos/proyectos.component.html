@@ -1,0 +1,108 @@
+<section>
+    <h1>Proyectos</h1>
+    <div class="container-fluid">
+        <div *ngFor="let item of proyectosList"  class="row">
+            <div class="col-2">
+                <img [src]="item.img" class="img-fluid" alt="logoUnsam" width=60%>
+            </div>
+            <div class="col-8">
+                <h2>{{item.empresa}} - {{item.titulo}}</h2>
+                <p id="descripcion" class="nombre">{{item.descripcion}}</p>
+                <p id="url" class="nombre">{{item.url}}</p>
+            </div>
+            <div class="col">
+                <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarProyectos" (click)="mostrarDatos(item)">Editar</button>
+                <button *ngIf="usuarioAutenticado" class="myButton" (click)="eliminarProyecto(item)">Eliminar</button>
+            </div>
+
+ <!-- Modal -->
+ <div class="modal fade" id="editarProyectos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Proyectos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="form">
+            <div class="mb-3">
+              <label for="empresa" class="form-label">Empresa</label>
+              <input type="text" class="form-control" id="school" formControlName="empresa">
+              <div *ngIf="empresa?.invalid && empresa?.touched">
+
+                <div *ngIf="empresa?.errors?.['required']" class="text-danger">
+                  La institucion es requerida
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="titulo" class="form-label">Titulo</label>
+              <input type="text" class="form-control" id="titulo" formControlName="titulo">
+            </div>
+            <div class="mb-3">
+              <label for="descripcion" class="form-label">Descripcion</label>
+              <input type="text" class="form-control" id="start" formControlName="descripcion">
+            </div>
+            <div class="mb-3">
+              <label for="url" class="form-label">link del proyecto</label>
+              <input type="text" class="form-control" id="url" formControlName="url">
+            </div>
+            <div class="mb-3">
+              <label for="img" class="form-label">Url de la imagen</label>
+              <input type="text" class="form-control" id="img" formControlName="img">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cerrarModalProyectos" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="guardarDatos()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+    </div>
+    <div style="text-align:center">
+    <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#agregarProyecto">Agregar</button><br>
+    </div>
+        <!-- Modal -->
+ <div class="modal fade" id="agregarEducacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Proyecto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form">
+          <div class="mb-3">
+            <label for="Empresa" class="form-label">Empresa</label>
+            <input type="text" class="form-control" id="empresa" formControlName="empresa">
+          </div>
+          <div class="mb-3">
+            <label for="titulo" class="form-label">Titulo</label>
+            <input type="text" class="form-control" id="titulo" formControlName="titulo">
+          </div>
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="descripcion" formControlName="descripcion">
+          </div>
+          <div class="mb-3">
+            <label for="url" class="form-label">Url del proyecto</label>
+            <input type="text" class="form-control" id="url" formControlName="url">
+          </div>
+          <div class="mb-3">
+            <label for="img" class="form-label">Url de la imagen</label>
+            <input type="text" class="form-control" id="img" formControlName="img">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModalProyectosNew" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="agregarProyecto()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>

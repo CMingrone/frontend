@@ -1,0 +1,115 @@
+<section>
+    <h1>Educacion</h1>
+    <div class="container-fluid">
+        <div *ngFor="let item of educacionList"  class="row" >
+            <div class="col-2">
+                <img [src]="item.img" class="img-fluid" alt="logo" width=60%>
+            </div>
+            <div class="col-8">
+                <h2>{{item.school}}</h2>
+                <p id="tituloUno" class="nombre">{{item.title}}</p>
+                <p id="tiempo" class="nombre">{{item.start}} - {{item.end}}</p>
+            </div>
+            <div class="col">
+                <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarEducacion" (click)="almacenarId(item)" (click)="mostrarDatos(item)">Editar</button><br>
+                <button *ngIf="usuarioAutenticado" class="myButton" (click)="eliminarEducacion(item)">Eliminar</button>
+            </div>
+            
+ <!-- Modal -->
+ <div class="modal fade" id="editarEducacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Educacion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="form">
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Institucion</label>
+              <input type="text" class="form-control" id="school" formControlName="school">
+              <div *ngIf="school?.invalid && school?.touched">
+
+                <div *ngIf="school?.errors?.['required']" class="text-danger">
+                  La institucion es requerida
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="title" class="form-label">Titulo</label>
+              <input type="text" class="form-control" id="title" formControlName="title">
+            </div>
+            <div class="mb-3">
+              <label for="start" class="form-label">Comienzo</label>
+              <input type="text" class="form-control" id="start" formControlName="start">
+            </div>
+            <div class="mb-3">
+              <label for="end" class="form-label">Finalizacion</label>
+              <input type="text" class="form-control" id="end" formControlName="end">
+            </div>
+            <div class="mb-3">
+              <label for="img" class="form-label">Url de la imagen</label>
+              <input type="text" class="form-control" id="img" formControlName="img">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cerrarModalEducacion" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="guardarDatos()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+    
+      </div>
+
+    <div style="text-align:center">
+   
+    <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#agregarEducacion">Agregar</button><br>
+    </div>
+  
+    <!-- Modal -->
+ <div class="modal fade" id="agregarEducacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nueva Educacion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form">
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Institucion</label>
+            <input type="text" class="form-control" id="school" formControlName="school">
+
+          </div>
+          <div class="mb-3">
+            <label for="title" class="form-label">Titulo</label>
+            <input type="text" class="form-control" id="title" formControlName="title">
+          </div>
+          <div class="mb-3">
+            <label for="start" class="form-label">Comienzo</label>
+            <input type="text" class="form-control" id="start" formControlName="start">
+          </div>
+          <div class="mb-3">
+            <label for="end" class="form-label">Finalizacion</label>
+            <input type="text" class="form-control" id="end" formControlName="end">
+          </div>
+          <div class="mb-3">
+            <label for="img" class="form-label">Url de la imagen</label>
+            <input type="text" class="form-control" id="img" formControlName="img">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModalEducacionNew" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="agregarEducacion()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+ 
+</section>

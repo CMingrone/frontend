@@ -1,0 +1,180 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "fullName": "Carlos A.",
+      "position": "Desarrollador Web",
+      "ubication": "Buenos Aires, Argentina.",
+      "img": "assets/imagenes/foto.jpg",
+      "id": 2
+    },
+    {
+      "comentario": "En busca de nuevos horizontes, me encuentro expentante de encontrar un nuevo lugar de trabajo donde pueda fortalecer mis conocimientos y crecer profesionalmente cumpiendo eficientemente con los requerimientos de la empresa.",
+      "id": 3
+    },
+    {
+      "comentario": "uentro expentante de encontrar un nuevo lugar de trabajo donde pueda fortalecer mis conocimientos y crecer profesionalmente cumpiendo eficientemente con los requerimientos de la empresa.",
+      "id": 4
+    },
+    {
+      "comentario": "bajo donde pueda fortalecer mis conocimientos y crecer profesionalmente cumpiendo eficientemente con los requerimientos de la empresa.",
+      "id": 5
+    },
+    {
+      "comentario": "expentante de encontrar un nuevo lugar de trabajo donde pueda fortalecer mis conocimientos y crecer profesionalmente cumpiendo eficientemente con los requerimientos de la empresa.",
+      "id": 6
+    },
+    {
+      "fullName": "Carlos A. Mingrone",
+      "position": "g",
+      "ubication": "Buenos Aires, Argentina.",
+      "img": "assets/imagenes/foto.jpg",
+      "id": 7
+    },
+    {
+      "fullName": "Carlos A. Mingrone",
+      "position": "gghmgh",
+      "ubication": "Buenos Aires, Argentina.",
+      "img": "C:\\Users\\Carlos\\Desktop\\ArgPrograma\\Frontend\\src\\assets\\imagenes\\foto.jpg",
+      "id": 8
+    },
+    {
+      "fullName": "Carlos",
+      "position": "gghmgh",
+      "ubication": "Buenos Aires, Argentina.",
+      "img": "C:\\Users\\Carlos\\Desktop\\ArgPrograma\\Frontend\\src\\assets\\imagenes\\foto.jpg",
+      "id": 9
+    },
+    {
+      "school": "fghkfgk",
+      "title": "fjkgh",
+      "start": "23",
+      "end": "234",
+      "img": "rghsergs",
+      "id": 10
+    },
+    {
+      "school": "fghkfgk",
+      "title": "fjkgh",
+      "start": "23",
+      "end": "234",
+      "img": "rghsergs",
+      "id": 11
+    },
+    {
+      "school": "hlhjlhlh",
+      "title": "hjlhjlhjl",
+      "start": "7786",
+      "end": "678",
+      "img": "ghkhk",
+      "id": 12
+    },
+    {
+      "school": "hlhjlhlh",
+      "title": "hjlhjlhjl",
+      "start": "7786",
+      "end": "678",
+      "img": "ghkhk",
+      "id": 13
+    },
+    {
+      "school": "dfgndfgj",
+      "title": "sfghdfgh",
+      "start": "345",
+      "end": "345",
+      "img": "sfgn",
+      "id": 14
+    },
+    {
+      "school": "gj,g",
+      "title": "ghj,g,",
+      "start": "678",
+      "end": "678",
+      "img": "jh,hj,",
+      "id": 15
+    },
+    {
+      "school": "Colegio",
+      "title": "Produccion de Bienes",
+      "start": "2004",
+      "end": "2006",
+      "img": "assets/imagenes/logocjh.png",
+      "id": 16
+    },
+    {
+      "fullName": "Carlos",
+      "position": "Desarrollador Web",
+      "ubication": "Buenos Aires, Argentina.",
+      "img": "assets/imagenes/foto.jpg",
+      "id": 17
+    },
+    {
+      "school": "Colegio",
+      "title": "Produccion de Bienes y Servicios",
+      "start": "2004",
+      "end": "2006",
+      "img": "assets/imagenes/logocjh.png",
+      "id": 18
+    },
+    {
+      "school": "Colegio ",
+      "title": "Produccion de Bienes y Servicios",
+      "start": "2004",
+      "end": "2006",
+      "img": "assets/imagenes/logocjh.png",
+      "id": 19
+    },
+    {
+      "school": " Jose ",
+      "title": "Produccion de Bienes y Servicios",
+      "start": "2004",
+      "end": "2006",
+      "img": "assets/imagenes/logocjh.png",
+      "id": 20
+    },
+    {
+      "school": "UNSAMjhgkj",
+      "title": "Tecnico en Programacion Informatica",
+      "start": "2019",
+      "end": "Actualmente",
+      "img": "assets/imagenes/unsam.jpg",
+      "id": 21
+    },
+    {
+      "school": "Colegio Jose ",
+      "title": "Produccion de Bienes y Servicios",
+      "start": "2004",
+      "end": "2006",
+      "img": "assets/imagenes/logocjh.png",
+      "id": 22
+    },
+    {
+      "comentario": "En busca de nuevos horizontes,",
+      "id": 23
+    },
+    {
+      "nombre": "otra",
+      "progreso": "60",
+      "id": 24
+    },
+    {
+      "nombre": "ol",
+      "progreso": 70,
+      "id": 25
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

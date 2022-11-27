@@ -1,0 +1,75 @@
+<header>
+  <app-nav-bar></app-nav-bar>
+        <div class="Container-Fluid" >
+        <img src= "../assets/imagenes/Fondo.jpg" class = "imgA1" alt="imagen de fondo" style="width:100%">
+        <img src= "../assets/imagenes/Imagen.png" class = "imgB1" alt="mi imagen" style="width:15%">
+          
+        </div>
+    
+        <h1 id="nombre">{{persona.fullName}}</h1>
+        <p id="perfil" class="descripcion">{{persona.position}}</p>
+        <p id="residencia" class="descripcion">{{persona.ubication}}</p>
+            <div class="centrado">        
+                    <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editEncabezado" (click)="mostrarDatosEncabezado()">Editar</button>
+            </div>
+        
+  <!-- Modal -->
+  <div class="modal fade" id="editEncabezado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Encabezado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="form">
+
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Nombre Completo</label>
+              <input type="text" class="form-control" id="fullName" formControlName="fullName" placeholder="Ingrese su numbre aqui...">
+              <div *ngIf="fullName?.invalid && fullName?.touched">
+                <div *ngIf="fullName?.errors?.['required']" class="text-danger">
+                  Apellido y Nombres es requerido
+                </div>
+                <div *ngIf="fullName?.errors?.['minlength']" class="text-danger">
+                  El apellido y nombre debe tener un minimo de 5 caracteres.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="puesto" class="form-label">Puesto</label>
+              <input type="text" class="form-control" id="puesto" formControlName="position" placeholder="Ingrese su puesto aqui...">
+              <div *ngIf="position?.errors?.['required']" class="text-danger">
+               El puesto es requerido
+              </div>
+            </div>
+
+
+            <div class="mb-3">
+              <label for="ubicacion" class="form-label">Ubicacion</label>
+              <input type="text" class="form-control" id="ubicacion" formControlName="ubication" placeholder="Ingrese su ubicacion aqui...">
+              <div *ngIf="ubication?.errors?.['required']" class="text-danger">
+                La ubicacion es requerida
+               </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="imagen" class="form-label">Imagen</label>
+              <input type="text" class="form-control" id="imagen" formControlName="url">
+              <div *ngIf="url?.errors?.['required']" class="text-danger">
+                La imagen es requerida
+               </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cerrarModalEncabezado" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="guardarEncabezado()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+</header>

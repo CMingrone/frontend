@@ -1,0 +1,42 @@
+{
+    "educacion":[ 
+        {   
+            "id" : 1,
+            "school" : "UNSAM",
+            "title" : "Tecnico en Programacion Informatica",
+            "start" : "2019",
+            "end" : "Actualmente",
+            "img" : "assets/imagenes/unsam.jpg",
+            "idPersona" : 1
+        },
+        {
+            "id" : 2,
+            "school" : "YoProgramo",    
+            "title" : "Desarrollador Web FullStack",
+            "start" : "2021",
+            "end" : "2022",
+            "img" : "assets/imagenes/ArgP.png",
+            "idPersona" : 1
+        },
+        {
+            "id": 3,
+            "school" : "YoProgramo",
+            "title" : "Curso de ingles para desarrolladores de Software",
+            "start" : "2022",
+            "end" : "2022",
+            "img" : "assets/imagenes/ArgP.png",
+            "idPersona":1
+        },
+        {
+            "id": 4,
+            "school" : "Colegio Jose Hernandez",
+            "title" : "Produccion de Bienes y Servicios",
+            "start" : "2004",
+            "end" : "2006",
+            "img" : "assets/imagenes/logocjh.png",
+            "idPersona": 1
+        }
+
+    ]
+
+}

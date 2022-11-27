@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+body {background-color: #dfe5ba;}
+
+section {border: 5px outset #20333f;
+        margin: 1%;
+        padding: 1%;
+}       
+.myButton {
+color: rgb(255, 251, 251); 
+font-size: 16px; line-height: 20px; 
+padding: 6px; border-radius: 15px; 
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+font-weight: normal; 
+font-style: normal;
+font-variant: normal; 
+background: rgb(65, 10, 10);
+text-transform: uppercase;
+border: 5px outset rgb(28, 30, 32); 
+display: inline-block;}
+
+#nombre{
+    text-align: center;
+    font-size: 80px;
+    text-shadow: 4px 3px 0 #7A7A7A;
+}
+.descripcion{
+    text-align: center;
+    font-style: italic;
+}
+.centrado{
+    padding-top: 5%;
+    text-align: center;
+}
+h1{
+    font-family: cursive;
+}
+.modal-header{
+    background: orange;
+    color: black;
+    text-transform: uppercase;
+}
+.modal-body{
+    background: #dfe5ba;
+}
+.modal-footer{
+    background:rgb(33, 35, 114)
+}
+.ng-valid:not(form).ng-touched {
+     border-left: 5px solid #42A948; /* green */
+}
+    
+.ng-invalid:not(form).ng-touched {
+    border-left: 5px solid #a94442; /* red */
+}
