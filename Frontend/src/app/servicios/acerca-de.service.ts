@@ -7,7 +7,7 @@ import { AcercaDe } from '../entidades/acercaDe';
   providedIn: 'root'
 })
 export class AcercaDeService {
-  url : string = "http://localhost:8080/acercaDe"
+  url : string = "https://carlosmin.herokuapp.com/acercaDe"
   constructor(private http:HttpClient) {
     console.log("El servicio acercaDe esta corriendo");
    }
@@ -15,6 +15,6 @@ export class AcercaDeService {
     return this.http.get<AcercaDe>(this.url+"/"+id);
   }
   editarDatos(comentario:AcercaDe):Observable<any>{
-    return this.http.put(this.url+"Modificada",comentario);
+    return this.http.put(this.url,comentario);
   }
 }

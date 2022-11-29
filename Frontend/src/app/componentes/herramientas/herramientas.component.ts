@@ -35,10 +35,6 @@ export class HerramientasComponent implements OnInit {
       return this.form.get("progreso");
     }
  
- 
-
-
-
 
   ngOnInit(): void {
     this.login.loginIn.subscribe(data=>{
@@ -52,6 +48,7 @@ export class HerramientasComponent implements OnInit {
     this.servicioDeHerramientas.obtenerHerramientas().subscribe(data=>{
       console.log(data);
       this.herramientasList=data;
+      
     })
   }
 
@@ -69,21 +66,22 @@ export class HerramientasComponent implements OnInit {
           let idPersona=1;
 
           let herramientasEditar = new Herramienta(this.idBack,nombre,progreso,idPersona);
-          this.servicioDeHerramientas.editarDatos(herramientasEditar,this.idBack).subscribe({
-              //modificar los datos del componente por los ingresados por el usuario
+          console.log(herramientasEditar)
+          console.log("pasa por aca")
+
+          this.servicioDeHerramientas.editarDatos(herramientasEditar).subscribe({
+              
             next: (data) => {
               this.herramientasList[this.idFront]=herramientasEditar
-             
-              document.getElementById("cerrarModalHerramientas")?.click();
               this.form.reset();
+              document.getElementById("cerrarModalHerramientas")?.click();
+              
             }, 
             error: (error) => {
               alert('No se puedo actualizar el registro. Por favor intente nuevamente mas tarde');
            
             }
-          });
-        
-          
+          });    
     }
     else{
           alert('Hay errores');
@@ -95,6 +93,7 @@ export class HerramientasComponent implements OnInit {
     this.idFront=this.herramientasList.indexOf(item);
       this.form.get('nombre')?.setValue(item.nombre);
       this.form.get('progreso')?.setValue(item.progreso);
+      this.almacenarId(item);
   }
 
   eliminarHerramienta(item:Herramienta)
@@ -111,19 +110,22 @@ export class HerramientasComponent implements OnInit {
   }
 }
   agregarHerramienta(){
-    let id=this.herramientasList.length;
+    let id=this.herramientasList.length+1;
     let nombre=this.form.get('nombre')?.value;
     let progreso=this.form.get('progreso')?.value;
     let idPersona=1;
 
     let nuevaHerramienta = new Herramienta(id,nombre,progreso,idPersona);
-   
+    alert("agregar nuevo item"+id);
     this.servicioDeHerramientas.nuevaHerramienta(nuevaHerramienta).subscribe(data => {
-    });
+   
 
     this.herramientasList[id]=nuevaHerramienta;
     this.form.reset();
-    this.ngOnInit();
-    document.getElementById("cerrarModalHerramientaNew")?.click();
+    this.ngOnInit(); 
+  });
+    document.getElementById("cerrarModalHerramientaNueva")?.click(); 
+   
+    
   }
 }

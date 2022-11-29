@@ -1,0 +1,27 @@
+{
+    "experiencia":[ 
+        {   "idExperiencia" : 1,
+            "empresa" : "EETN21",
+            "puesto" : "Ayudantia en programacion",
+            "tareas" : "Ciclos, funciones, procedimientos, condicionales, listas, vectores, matrices, etc",
+            "tipo" : "Part-Time",
+            "start" : "2018",
+            "end" : "2019",
+            "img" : "assets/imagenes/eetn.jpg",
+            "idPersona" : 1
+        },
+        {   "idExperiencia":2,
+            "empresa" : "PC Shop",
+            "puesto" : "Operario reparacion y armado de pc",
+            "tareas" : ["Intalacion de software-hardware", " Reparacion y limpieza de componentes en general",
+                " Armado de PC"],
+            "tipo" : "Part-Time",
+            "start" : "2015",
+            "end" : "2016",
+            "img" : "assets/imagenes/pcShop.jpg",
+            "idPersona": 1
+        }
+        
+    ]
+
+}

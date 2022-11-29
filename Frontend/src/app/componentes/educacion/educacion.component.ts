@@ -90,14 +90,9 @@ export class EducacionComponent implements OnInit {
           this.servicioEducacion.editarEducacion(educacionEditar,this.idBack).subscribe({
               //modificar los datos del componente por los ingresados por el usuario
             next: (data) => {
-              
               this.educacionList[this.idFront]=educacionEditar;
-              
-              
-              
-              //this.educacionList[this.idFront]['id']=this.idBack;
               this.form.reset();
-                document.getElementById("cerrarModalEducacion")?.click();
+             document.getElementById("cerrarModalEducacion")?.click();
             }, 
             error: (error) => {
               alert('No se puedo actualizar el registro. Por favor intente nuevamente mas tarde');

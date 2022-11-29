@@ -7,7 +7,7 @@ import { Persona } from '../entidades/persona';
   providedIn: 'root'
 })
 export class DatosPersonalesService {
-url : string = "http://localhost:8080/persona"
+url : string = "https://carlosmin.herokuapp.com/persona"
   constructor(private http:HttpClient) {
     console.log("El servicio de datos personales esta corriendo");
    }
@@ -15,7 +15,7 @@ url : string = "http://localhost:8080/persona"
      return this.http.get<Persona>(this.url+"/"+id);
    }
    editarDatosPersonales(persona:Persona):Observable<any>{
-     return this.http.put(this.url+"Modificada",persona);
+     return this.http.put(this.url,persona);
    }
    
    

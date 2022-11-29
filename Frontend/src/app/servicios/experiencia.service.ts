@@ -7,7 +7,7 @@ import { Experiencia } from '../entidades/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  url : string = "http://localhost:8080/experiencia"
+  url : string = "https://carlosmin.herokuapp.com/experiencia"
   constructor(private http:HttpClient) {
     console.log("El servicio de educacion esta corriendo");
    };
