@@ -7,7 +7,7 @@ import { Persona } from '../entidades/persona';
   providedIn: 'root'
 })
 export class DatosPersonalesService {
-url : string = "https://carlosmin.herokuapp.com/persona"
+url : string = "https://mingroneback.onrender.com/persona"
   constructor(private http:HttpClient) {
     console.log("El servicio de datos personales esta corriendo");
    }

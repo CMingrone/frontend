@@ -11,7 +11,7 @@ export class LoginService {
 @Output() loginIn: EventEmitter<any> = new EventEmitter();
 @Output() loginOut: EventEmitter<any> = new EventEmitter();
 
-url : string = "https://carlosmin.herokuapp.com/login"
+url : string = "https://mingroneback.onrender.com/login"
 
   constructor(private http:HttpClient) {
     console.log("El servicio de login esta corriendo");

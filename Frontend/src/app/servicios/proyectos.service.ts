@@ -8,7 +8,7 @@ import { Proyecto } from '../entidades/proyectos';
   providedIn: 'root'
 })
 export class ProyectosService {
-  url : string = "https://carlosmin.herokuapp.com/proyecto"
+  url : string = "https://mingroneback.onrender.com/proyecto"
   constructor(private http:HttpClient) {
     console.log("El servicio de proyectos esta corriendo");
    };

@@ -7,7 +7,7 @@ import { AcercaDe } from '../entidades/acercaDe';
   providedIn: 'root'
 })
 export class AcercaDeService {
-  url : string = "https://carlosmin.herokuapp.com/acercaDe"
+  url : string = "https://mingroneback.onrender.com/acercaDe"
   constructor(private http:HttpClient) {
     console.log("El servicio acercaDe esta corriendo");
    }

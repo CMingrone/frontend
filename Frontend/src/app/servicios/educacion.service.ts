@@ -7,7 +7,7 @@ import { Educacion } from '../entidades/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  url : string = "https://carlosmin.herokuapp.com/educacion"
+  url : string = "https://mingroneback.onrender.com/educacion"
   constructor(private http:HttpClient) {
     console.log("El servicio de educacion esta corriendo");
    };
