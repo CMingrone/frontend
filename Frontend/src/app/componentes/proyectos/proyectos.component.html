@@ -1,4 +1,4 @@
-<section>
+<section class="contenido scroll">
     <h1>Proyectos</h1>
     <div class="container-fluid">
         <div *ngFor="let item of proyectosList"  class="row">
@@ -11,8 +11,8 @@
                 <p id="url" class="nombre">{{item.url}}</p>
             </div>
             <div class="col">
-                <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarProyectos" (click)="mostrarDatos(item)">Editar</button>
-                <button *ngIf="usuarioAutenticado" class="myButton" (click)="eliminarProyecto(item)">Eliminar</button>
+                <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarProyectos" (click)="mostrarDatos(item)"><i class="fas fa-edit"></i></button>
+                <button *ngIf="usuarioAutenticado" class="myButton" (click)="eliminarProyecto(item)"><i class="fas fa-trash-alt"></i></button>
             </div>
 
  <!-- Modal -->
@@ -63,7 +63,7 @@
         </div>
     </div>
     <div style="text-align:center">
-    <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#agregarProyecto">Agregar</button><br>
+    <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#agregarProyecto"><i class="fas fa-plus"></i></button><br>
     </div>
         <!-- Modal -->
  <div class="modal fade" id="agregarProyecto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

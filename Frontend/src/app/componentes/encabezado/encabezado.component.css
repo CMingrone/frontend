@@ -1,13 +1,30 @@
-
-  .imgA1 {
+  .portada {
+    width: 100%;
+    height: 35em;
     z-index: 1;
     position: relative;
   }
-  .imgB1 {
+  .foto {
     z-index: 3; 
+    width: 20%;
     border-radius:10%;  
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 2%;
     
-  }  
+  } 
+  .nombrePortada {
+    margin-top: 1em;
+  } 
+
+  @media (max-width: 600px){
+    .portada{
+      height: 25em;
+    }
+    .foto{
+      width: 30%;
+      left: 25%;
+      top: 30%;
+      width: 50%;
+    }
+  }

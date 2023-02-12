@@ -1,4 +1,4 @@
-<section>
+<section class="contenido scroll">
     <h1>Educacion</h1>
     <div class="container-fluid">
         <div *ngFor="let item of educacionList"  class="row" >
@@ -11,8 +11,8 @@
                 <p id="tiempo" class="nombre">{{item.start}} - {{item.end}}</p>
             </div>
             <div class="col">
-                <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarEducacion" (click)="almacenarId(item)" (click)="mostrarDatos(item)">Editar</button><br>
-                <button *ngIf="usuarioAutenticado" class="myButton" (click)="eliminarEducacion(item)">Eliminar</button>
+                <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarEducacion" (click)="almacenarId(item)" (click)="mostrarDatos(item)"><i class="fas fa-edit"></i></button><br>
+                <button *ngIf="usuarioAutenticado" class="myButton" (click)="eliminarEducacion(item)"><i class="fas fa-trash-alt"></i></button>
             </div>
             
  <!-- Modal -->
@@ -66,7 +66,7 @@
 
     <div style="text-align:center">
    
-    <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#agregarEducacion">Agregar</button><br>
+    <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#agregarEducacion"><i class="fas fa-plus"></i></button><br>
     </div>
   
     <!-- Modal -->

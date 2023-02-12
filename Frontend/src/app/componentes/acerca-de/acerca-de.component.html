@@ -1,4 +1,4 @@
-<section>
+<section class="contenido scroll">
     <h1>Acerca de</h1>
     <div class="row">
         <div class="col-12">
@@ -6,7 +6,7 @@
         </div>
         <div class="col">
           <div style="text-align:center">
-            <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarAcercaDe" (click)="mostrarDatosActuales()">Editar</button>
+            <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarAcercaDe" (click)="mostrarDatosActuales()"><i class="fas fa-edit"></i></button>
               </div>  
                <!-- Modal -->
                  <div class="modal fade" id="editarAcercaDe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

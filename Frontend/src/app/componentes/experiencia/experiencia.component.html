@@ -1,4 +1,4 @@
-<section>
+<section class="contenido scroll">
     <h1>Experiencia</h1>
     <div class="container-fluid">
         <div *ngFor="let item of experienciaList" class="row">
@@ -13,8 +13,8 @@
                 <p id="tiempo" class="nombre">{{item.start}} - {{item.end}}</p>
             </div>
             <div class="col">
-                <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarExperiencia" (click)="mostrarDatos(item)">Editar</button>
-                <button *ngIf="usuarioAutenticado" class="myButton" (click)="eliminarExperiencia(item)">Eliminar</button>
+                <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarExperiencia" (click)="mostrarDatos(item)"><i class="fas fa-edit"></i></button>
+                <button *ngIf="usuarioAutenticado" class="myButton" (click)="eliminarExperiencia(item)"><i class="fas fa-trash-alt"></i></button>
             </div>
         </div>
     </div>
@@ -74,7 +74,7 @@
     </div>
   </div>
   <div style="text-align:center">
-  <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#agregarExperiencia">Agregar</button><br>
+  <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#agregarExperiencia"><i class="fas fa-plus"></i></button><br>
 </div> 
 <!-- Modal -->
     <div class="modal fade" id="agregarExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

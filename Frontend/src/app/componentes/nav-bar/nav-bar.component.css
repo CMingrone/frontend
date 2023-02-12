@@ -1,0 +1,39 @@
+.iconosNav{
+    color: white;
+    font-size: 3em;
+    margin-right: 0.1em;
+}
+ul{
+    width: 100%;
+    list-style: none;
+}
+.fondoNav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    width: 100%;
+    height: 15vh;
+}
+.logo{
+    width: 15%;
+    margin-right: 0.2em;
+}
+.lista-contactos{
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media (max-width: 600px) {
+    .lista-contactos{
+        width: 70%;
+    }
+    .fondoNav{
+        justify-content: center;
+    }
+    .logo{
+        width: 30%;
+    }
+}

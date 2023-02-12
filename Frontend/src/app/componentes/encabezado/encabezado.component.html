@@ -1,16 +1,16 @@
 <header>
   <app-nav-bar></app-nav-bar>
         <div class="Container-Fluid" >
-        <img src= "../assets/imagenes/Fondo.jpg" class = "imgA1" alt="imagen de fondo" style="width:100%">
-        <img src= "../assets/imagenes/Imagen.png" class = "imgB1" alt="mi imagen" style="width:15%">
+        <img src= "../assets/imagenes/fondoBinario.jpg" class = "portada" alt="imagen de fondo">
+        <img src= "../assets/imagenes/Imagen.png" class = "foto" alt="mi imagen" >
           
         </div>
     
-        <h1 id="nombre">{{persona.fullName}}</h1>
+        <h1 id="nombre" class="nombrePortada">{{persona.fullName}}</h1>
         <p id="perfil" class="descripcion">{{persona.position}}</p>
         <p id="residencia" class="descripcion">{{persona.ubication}}</p>
             <div class="centrado">        
-                    <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editEncabezado" (click)="mostrarDatosEncabezado()">Editar</button>
+                    <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editEncabezado" (click)="mostrarDatosEncabezado()"><i class="fas fa-user-edit"></i></button>
             </div>
         
   <!-- Modal -->
