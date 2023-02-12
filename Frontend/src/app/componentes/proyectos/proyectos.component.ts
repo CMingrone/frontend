@@ -75,7 +75,7 @@ export class ProyectosComponent implements OnInit {
           let idPersona=1;
 
           let proyectosEditar = new Proyecto(this.idBack,empresa,titulo,descripcion,url,img,idPersona);
-          this.servicioProyectos.editarProyecto(proyectosEditar,this.idBack).subscribe({
+          this.servicioProyectos.editarProyecto(proyectosEditar).subscribe({
               //modificar los datos del componente por los ingresados por el usuario
             next: (data) => {
               this.proyectosList[this.idFront]=proyectosEditar
@@ -122,7 +122,7 @@ export class ProyectosComponent implements OnInit {
   }
 }
   agregarProyecto(){
-    let id=this.proyectosList.length;
+    let id=this.proyectosList.length+1;
     let empresa=this.form.get('empresa')?.value;
     let titulo=this.form.get('titulo')?.value;
     let descripcion=this.form.get('descripcion')?.value;
@@ -133,11 +133,13 @@ export class ProyectosComponent implements OnInit {
     let nuevoProyecto = new Proyecto(id,empresa,titulo,descripcion,url,img,idPersona);
     alert("agregar nuevo item"+id);
     this.servicioProyectos.nuevoProyecto(nuevoProyecto).subscribe(data => {
+          this.proyectosList[id]=nuevoProyecto;
+          this.form.reset();
+          this.ngOnInit();
     });
 
-    this.proyectosList[id]=nuevoProyecto;
-    this.form.reset();
-    this.ngOnInit();
     document.getElementById("cerrarModalProyectosNew")?.click();
-  }
+   
+  } 
+  
 }

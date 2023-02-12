@@ -16,8 +16,8 @@ export class ProyectosService {
     obtenerProyectos():Observable<Proyecto[]>{
       return this.http.get<Proyecto[]>(this.url);
     }
-    editarProyecto(proyecto:Proyecto,id:number):Observable<any>{
-      return this.http.put(this.url+"/"+id,proyecto);
+    editarProyecto(proyecto:Proyecto):Observable<any>{
+      return this.http.put(this.url,proyecto);
     }
     nuevoProyecto(proyecto:Proyecto):Observable<any>{
       return this.http.post(this.url,proyecto);

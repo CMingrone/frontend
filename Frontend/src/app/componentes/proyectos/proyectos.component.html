@@ -27,7 +27,7 @@
           <form [formGroup]="form">
             <div class="mb-3">
               <label for="empresa" class="form-label">Empresa</label>
-              <input type="text" class="form-control" id="school" formControlName="empresa">
+              <input type="text" class="form-control" id="empresa" formControlName="empresa">
               <div *ngIf="empresa?.invalid && empresa?.touched">
 
                 <div *ngIf="empresa?.errors?.['required']" class="text-danger">
@@ -41,7 +41,7 @@
             </div>
             <div class="mb-3">
               <label for="descripcion" class="form-label">Descripcion</label>
-              <input type="text" class="form-control" id="start" formControlName="descripcion">
+              <input type="text" class="form-control" id="descripcion" formControlName="descripcion">
             </div>
             <div class="mb-3">
               <label for="url" class="form-label">link del proyecto</label>
@@ -66,7 +66,7 @@
     <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#agregarProyecto">Agregar</button><br>
     </div>
         <!-- Modal -->
- <div class="modal fade" id="agregarEducacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="agregarProyecto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

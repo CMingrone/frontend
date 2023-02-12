@@ -15,8 +15,8 @@ export class ExperienciaService {
     obtenerExperiencia():Observable<Experiencia[]>{
       return this.http.get<Experiencia[]>(this.url);
     }
-    editarExperiencia(experiencia:Experiencia,id:number):Observable<any>{
-      return this.http.put(this.url+"/"+id,experiencia);
+    editarExperiencia(experiencia:Experiencia):Observable<any>{
+      return this.http.put(this.url,experiencia);
     }
     nuevaExperiencia(experiencia:Experiencia):Observable<any>{
       return this.http.post(this.url,experiencia);

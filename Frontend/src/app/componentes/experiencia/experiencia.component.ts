@@ -81,7 +81,7 @@ export class ExperienciaComponent implements OnInit {
           let idPersona=1;
 
           let experienciaEditar = new Experiencia(this.idBack,empresa,puesto,tareas,tipo,start,end,img,idPersona);
-          this.servicioExperiencia.editarExperiencia(experienciaEditar,this.idBack).subscribe({
+          this.servicioExperiencia.editarExperiencia(experienciaEditar).subscribe({
               //modificar los datos del componente por los ingresados por el usuario
             next: (data) => {
               this.experienciaList[this.idFront]=experienciaEditar
