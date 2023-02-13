@@ -1,35 +1,20 @@
 <section class="contenido scroll">
-    <h1>Hard & Soft Skill</h1>     
-    <div class="container-fluid">
-   
-        <div *ngFor="let item of herramientasList" class="row">
-
-        
-            <div class="row">
-               <div class="col-1"></div>
-               <div class="col-2"><h3 class="progress-title">{{item.nombre}}</h3></div>
-                <div class="col-md-6">
-
-                  <!--  
-                  <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ 'width': item.progreso + '%' }"></div>
-                  </div> --> 
-                  <div class="progress-outer">
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-danger" [ngStyle]="{ 'width': item.progreso + '%' }"></div>
-                            <div class="progress-value"><span>{{item.progreso}}</span>%</div>
-                        </div>
-                    </div>
-   
-         
-               
+    <h1>Herramientas</h1>     
+  <div class="container">
+    <div class="row row-cols-auto">
+    <div *ngFor="let item of herramientasList" class="text-center"> 
+          <div class="card col">
+            <div class="barra">
+                    <app-tarjeta-circulo [progreso]="item.progreso" [nombre]="item.nombre" ></app-tarjeta-circulo>
             </div>
-            <div class="col-1">
+            <div class="botonera">
                <button *ngIf="usuarioAutenticado" class="myButton" data-bs-toggle="modal" data-bs-target="#editarHerramientas" (click)="almacenarId(item)" (click)="mostrarDatos(item)"><i class="fas fa-edit"></i></button>
                <button *ngIf="usuarioAutenticado" class="myButton" (click)="eliminarHerramienta(item)"><i class="fas fa-trash-alt"></i></button>
-              </div>
-      </div>
-   </div></div>
+            </div>
+          </div>  
+    </div>
+    </div>
+  </div>
 
  <!-- Modal -->
  <div class="modal fade" id="editarHerramientas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

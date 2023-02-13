@@ -22,7 +22,8 @@ import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.componen
 import { HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { TarjetaCirculoComponent } from './componentes/tarjeta-circulo/tarjeta-circulo.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +36,15 @@ import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
     ProyectosComponent,
     PiePaginaComponent,
     NavBarComponent,
+    TarjetaCirculoComponent,
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [CargarScriptsService],
   bootstrap: [AppComponent]
