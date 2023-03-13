@@ -6,7 +6,7 @@
   }
   .foto {
     z-index: 3; 
-    width: 20%;
+    width: 250px;
     border-radius:10%;  
     position: absolute;
     top: 40%;
@@ -17,14 +17,33 @@
     margin-top: 1em;
   } 
 
+  @media (max-width: 800px){
+    .portada{
+      height: 30em;
+    }
+    .foto{
+      width: 220px;
+
+      top: 35%;
+    }
+  }  
   @media (max-width: 600px){
+    .portada{
+      height: 35em;
+    }
+    .foto{
+      width: 210px;
+      left: 25%;
+      top: 50%;
+    }
+  }  
+  @media (max-width: 400px){
     .portada{
       height: 25em;
     }
     .foto{
-      width: 30%;
+      width: 50%;
       left: 25%;
       top: 30%;
-      width: 50%;
     }
   }
